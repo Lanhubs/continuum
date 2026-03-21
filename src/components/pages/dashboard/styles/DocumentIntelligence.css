@@ -1,0 +1,272 @@
+.doc-intelligence {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+}
+
+.intelligence-hub-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.3fr;
+  gap: 1.5rem;
+  flex: 1;
+  min-height: fit-content;                 
+}
+
+/* --- Document Scanner --- */
+.scanner-container {
+  position: relative;
+  background-color: var(--primary-light);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  height: 50%;
+  box-shadow:  var(--shadow-xl);
+  border: 1px solid var(--primary-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.scan-preview {
+  flex: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-color: #0f172a;
+}
+
+.scan-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary);
+  box-shadow: 0 0 15px var(--primary);
+  z-index: 10;
+  animation: scanMove 4s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+@keyframes scanMove {
+  0% { top: 0; }
+  50% { top: 100%; }
+  100% { top: 0; }
+}
+
+.ai-hotspot {
+  position: absolute;
+  z-index: 20;
+}
+
+.hotspot-dot {
+  width: 24px;
+  height: 24px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--primary);
+  transition: transform 0.2s ease;
+}
+
+.hotspot-dot span {
+  font-size: 14px;
+}
+
+.ai-hotspot:hover .hotspot-dot {
+  transform: scale(1.2);
+}
+
+.hotspot-popup {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  background: var(--bg-card-light);
+  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-2xl);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(12px);
+}
+
+.ai-hotspot:hover .hotspot-popup {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* --- Briefing Panel --- */
+.briefing-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: fit-content;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.briefing-card {
+  background: var(--bg-card-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem;
+}
+
+.card-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.briefing-summary {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* --- Decoder List --- */
+.decoder-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.inscription-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  transition: all 0.2s ease;
+}
+
+.inscription-item:hover {
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.inscription-identity {
+  display: flex;
+  flex-direction: column;
+}
+
+.inscription-name {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--text-main);
+}
+
+.inscription-tech-label {
+  font-size: 0.625rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  margin-top: 0.125rem;
+}
+
+.decoding-result {
+  max-width: 60%;
+  text-align: right;
+}
+
+.decoding-text {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.decoding-label {
+  font-size: 0.625rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+/* --- Actionable Intelligence --- */
+.actions-brief {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.action-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--bg-light);
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+}
+
+.action-pill.dietary {
+  background: rgba(34, 197, 94, 0.05);
+  border-color: rgba(34, 197, 94, 0.1);
+}
+
+.action-pill span {
+  font-size: 1.25rem;
+}
+
+.action-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.action-type {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.action-text {
+  font-size: 0.8125rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* --- Responsive Hub --- */
+@media (max-width: 1024px) {
+  .intelligence-hub-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,29 @@
+.continuum-google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background-color: var(--pure-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--charcoal-gray);
+}
+
+.continuum-google-btn:hover {
+  border-color: var(--forest-green);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.continuum-google-btn:hover span {
+  color: var(--forest-green);
+}
+
+.continuum-google-btn:active {
+  transform: scale(0.98);
+}

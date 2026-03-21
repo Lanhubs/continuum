@@ -1,0 +1,136 @@
+.stat-card {
+  background-color: var(--bg-card-light);
+  padding: 1.5rem;
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+  font-family: var(--font-sans);
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.value-group {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.value-main {
+  font-size: 1.875rem;
+  font-weight: 900;
+  color: var(--text-main);
+}
+
+.value-unit {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.meter-section {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.meter-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.label-item {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.label-item.highlight {
+  color: var(--primary);
+}
+
+.meter-track {
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: var(--radius-full);
+  position: relative;
+}
+
+.dark .meter-track {
+  background-color: #1e293b;
+}
+
+.safe-zone {
+  position: absolute;
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: var(--radius-full);
+  opacity: 0.2;
+}
+
+.result-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background-color: var(--text-main);
+}
+
+.insight-box {
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-xl);
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.insight-icon {
+  color: var(--primary);
+}
+
+.insight-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.insight-text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.dark .insight-text {
+  color: #cbd5e1;
+}

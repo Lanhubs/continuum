@@ -1,0 +1,71 @@
+.upload-container {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    z-index: 10;
+    font-family: var(--font-sans);
+    background-color: white;
+    border-radius: 12px;
+    position: absolute;
+    bottom: 100%;
+    overflow:hidden;
+    left: 0;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+}
+.upload-options-header {
+    color: var(--primary);
+    padding-left:  0.75rem;
+    padding-bottom:  0.75rem;
+    padding-top:  0.75rem;
+    margin-top: 0;
+    background-color: var(--bg-light);
+    font-size: 0.7rem;
+    width: 100%;
+}
+.custom-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-main);
+    font-weight: 500;
+    cursor: pointer;
+    background-color: white;
+    width: 100%;
+}
+.custom-button svg {
+    color: var(--primary);
+    stroke: var(--primary);
+    flex-shrink: 0;
+}
+
+
+.custom-button:hover {
+    background-color: var(--bg-light);
+    color: var(--primary-dark);
+    border: 1px solid var(--primary-dark);
+}
+
+.file-info {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+}
+.file-item{
+    display: flex;
+    align-items:center;
+    gap:10px;
+    background-color: var(--bg-light);
+    padding: 0.5rem 1.5rem;
+    width: 100%;
+}
+.file-item .attach-file{
+  color: var(--primary);
+  justify-self: flex-end;
+  width: fit-content;
+  height: fit-content;
+  margin-left: auto;  
+  font-weight: 600;
+}

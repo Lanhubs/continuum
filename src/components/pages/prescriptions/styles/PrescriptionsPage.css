@@ -1,0 +1,409 @@
+.prescriptions-container {
+  display: flex;
+  height: 100%;
+  margin: -2rem -2.5rem; /* Offset App.css padding to fill main area */
+}
+
+.prescriptions-main {
+  flex: 1;
+  padding: 2rem 2.5rem;
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 280px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1.25rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.625rem 1rem 0.625rem 2.5rem;
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.tabs-nav {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 2rem;
+}
+
+.tab-item {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  background: none;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  cursor: pointer;
+}
+
+.tab-item.active {
+  color: #15803d;
+  background-color: #f0fdf4;
+  border-bottom: 2px solid #16a34a;
+}
+
+.medications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.prescriptions-sidebar {
+  width: 320px;
+  border-left: 1px solid var(--border-light);
+  background-color: white;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+}
+
+.dark .prescriptions-sidebar {
+  background-color: var(--bg-dark);
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-family: var(--font-sans);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.action-btn-styled {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-xl);
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.btn-icon-bg {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.dark .btn-icon-bg {
+  background-color: var(--bg-dark);
+}
+
+.action-btn-styled.primary-ghost {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  justify-content: flex-start;
+}
+
+.action-btn-styled.secondary-ghost {
+  background-color: white;
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+}
+
+.action-btn-styled:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--bg-light);
+}
+
+.pharmacy-card {
+  background-color: var(--bg-light);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem;
+}
+
+.pharmacy-header {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.pharmacy-header .material-symbols-outlined {
+  color: var(--primary);
+}
+
+.pharmacy-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.125rem;
+}
+
+.pharmacy-address {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.pharmacy-stats {
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border-light);
+  margin-bottom: 1rem;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.presc-stat-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.presc-stat-value {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.change-pharmacy-btn {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: white;
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-lg);
+  transition: all 0.2s ease;
+}
+
+.change-pharmacy-btn:hover {
+  background-color: var(--primary-light);
+}
+
+.consultation-box {
+  background-color: var(--primary);
+  border-radius: var(--radius-2xl);
+  padding: 1.5rem 1rem;
+  color: white;
+  position: relative;
+}
+
+.consultation-content {
+  position: relative;
+  z-index: 2;
+}
+
+.consultation-title {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #101828;
+}
+
+.consultation-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.25rem;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 0.625rem;
+  background-color: white;
+  color: var(--primary);
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.background-icon {
+  position: absolute;
+  right: -1.5rem;
+  bottom: -1.5rem;
+  font-size: 8rem !important;
+  color: rgba(255, 255, 255, 0.1);
+  transform: rotate(15deg);
+}
+
+@media (max-width: 1024px) {
+  .prescriptions-container {
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 80px); /* ensure it stretches */
+  }
+  .prescriptions-main {
+    padding: 2rem 2.5rem;
+    height: auto;
+    overflow-y: visible;
+    flex: none;
+  }
+  .prescriptions-sidebar {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--border-light);
+    padding: 2rem 2.5rem;
+    height: auto;
+    flex: none;
+  }
+  .action-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .action-btn-styled {
+    flex: 1;
+    min-width: 200px;
+    font-size: 0.8125rem;
+  }
+  .section-label {
+    font-size: 0.7rem;
+  }
+  .pharmacy-name {
+    font-size: 0.8125rem;
+  }
+  .pharmacy-address {
+    font-size: 0.7rem;
+  }
+  .presc-stat-label {
+    font-size: 0.7rem;
+  }
+  .presc-stat-value {
+    font-size: 0.75rem;
+  }
+  .change-pharmacy-btn {
+    font-size: 0.7rem;
+    padding: 0.4rem;
+  }
+  .consultation-title {
+    font-size: 1rem;
+  }
+  .consultation-text {
+    font-size: 0.8125rem;
+  }
+  .book-btn {
+    font-size: 0.8125rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .prescriptions-container {
+    margin: -1rem -1rem 0; /* Perfectly counters mobile DashboardLayout padding */
+  }
+  
+  .prescriptions-main {
+    padding: 1.25rem 1rem;
+  }
+  
+  .prescriptions-sidebar {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  /* Responsive Tabs - No wrapping, no scrolling, scales to fit */
+  .tabs-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.25rem;
+    overflow: visible;
+    padding-bottom: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .tabs-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-item {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 1.2;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .action-btn-styled {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .pharmacy-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stat-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 0;
+  }
+  
+  .stat-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  .prescriptions-sidebar .sidebar-section .action-buttons {
+    flex-direction: row;
+  }
+}
+
+.prescriptions-sidebar .sidebar-section .action-buttons .action-btn-styled:first-of-type {
+  width: 100%;
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+  background-color: var(--primary-light);
+}
+
