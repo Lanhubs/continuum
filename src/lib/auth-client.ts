@@ -9,7 +9,7 @@ export const authClient = createAuthClient({
     /* 
     plugins: [
         oneTapClient({
-            clientId: "870743279666-rv17tvnh2umuggm9b7iv4g4eddisn9v9.apps.googleusercontent.com",
+            clientId: "oauth-client-id",
             autoSelect: false,
             // cancelOnTapOutside: true,
             context: "signin",

@@ -44,14 +44,14 @@ const LabTestCard: React.FC<LabTestCardProps> = ({
               <span className={`status-badge status-${status.toLowerCase()}`}>
                 {status.toUpperCase()}
               </span>
-              <span className="dot">•</span>
+              <span className="dot">|</span>
               <div className="meta-item">
                 <span className="material-symbols-outlined small">calendar_today</span>
                 <span className="test-date">{date}</span>
               </div>
               {(doctor || location) && (
                 <>
-                  <span className="dot">•</span>
+                  <span className="dot">|</span>
                   <div className="meta-item">
                     <span className="material-symbols-outlined small">
                       {doctor ? 'person' : 'location_on'}

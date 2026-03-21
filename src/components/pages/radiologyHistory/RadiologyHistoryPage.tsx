@@ -24,7 +24,7 @@ const RadiologyHistoryPage: React.FC = () => {
         <h2 className="rh-title">Radiology History</h2>
         <div className="rh-meta">
           <span className="rh-count-badge">{radiologyHistory.length} Scans Interpreted</span>
-          <span className="rh-separator">•</span>
+          <span className="rh-separator">|</span>
           <span className="rh-updated-text">Updated just now</span>
         </div>
       </section>

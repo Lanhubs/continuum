@@ -48,7 +48,7 @@ const ChatView: React.FC = () => {
       setMessages([{
         type: "ai",
         content: `I've analyzed your **${latestDoc.type.replace('_', ' ')}** from ${new Date(latestDoc.date).toLocaleDateString()}. ${latestDoc.summary_message} — What would you like to know?`,
-        timestamp: "AI Health Partner • Just now",
+        timestamp: "AI Health Partner | Just now",
       }]);
     }
   }, [history, messages.length]);
@@ -85,7 +85,7 @@ const ChatView: React.FC = () => {
         {
           type: "ai",
           content: reply,
-          timestamp: `AI Health Partner • ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`,
+          timestamp: `AI Health Partner | ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`,
         },
       ]);
     } catch {

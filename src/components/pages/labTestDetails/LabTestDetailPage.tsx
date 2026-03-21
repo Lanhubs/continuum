@@ -176,7 +176,7 @@ const LabTestDetailPage: React.FC = () => {
             </div>
             <div className="ai-assistant-title">
               <p className="ai-assistant-name">AI Physician Assistant</p>
-              <p className="ai-assistant-status">Online • Ready to assist</p>
+              <p className="ai-assistant-status">Online | Ready to assist</p>
             </div>
           </div>
           <p className="ai-assistant-intro">

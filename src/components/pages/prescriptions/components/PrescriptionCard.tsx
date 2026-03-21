@@ -51,7 +51,7 @@ const PrescriptionCard: React.FC<PrescriptionCardProps> = ({
         <div className="card-header">
           <div className="card-title-group">
             <h3 className="med-name">{name}</h3>
-            <p className="med-dosage">{dosage} — {instructions}</p>
+            <p className="med-dosage">{dosage} | {instructions}</p>
           </div>
           <span className={`status-badge ${getStatusClass()}`}>{getStatusLabel()}</span>
         </div>
