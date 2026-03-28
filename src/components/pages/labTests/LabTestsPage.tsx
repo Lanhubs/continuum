@@ -27,12 +27,15 @@ const LabTestsPage: React.FC = () => {
         </div>
 
         <div className="tests-list">
+          {labTests.length !== 0 && (
+
+          <h4 className="group-label">Blood Work & Panels</h4>
+          )}
           {labTests.length === 0 ? (
             <p className="empty-state">No lab results found. Upload a document to get started.</p>
           ) : (
             labTests.map((test) => (
               <div key={test.id} className="test-group">
-                <h4 className="group-label">Blood Work & Panels</h4>
                 <LabTestCard
                   title={test.summary_message}
                   status="Completed"
