@@ -22,10 +22,9 @@
 }
 
 .brand-logo {
-  padding: 0.5rem;
-  background-color: var(--primary);
+  width: 200px;
+  object-fit: contain;
   border-radius: var(--radius-md);
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
