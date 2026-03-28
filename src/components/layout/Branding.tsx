@@ -1,12 +1,9 @@
 import React from 'react';
-
+import logo from "../../assets/stryde logo.png"
 const Branding: React.FC<{ className?: string }> = ({ className = '' }) => {
   return (
     <div className={`brand ${className}`}>
-      <div className="brand-logo">
-        <span className="material-symbols-outlined">medical_services</span>
-      </div>
-      <h2 className="brand-name">Medical Partner</h2>
+       <img src={logo} alt="stryde" className='brand-logo' />
     </div>
   );
 };
