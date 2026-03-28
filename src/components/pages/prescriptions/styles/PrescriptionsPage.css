@@ -396,7 +396,7 @@
 
 @media (min-width: 640px) and (max-width: 1024px) {
   .prescriptions-sidebar .sidebar-section .action-buttons {
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 
