@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./styles/ChatView.css";
 import ChatMessage from "./components/ChatMessage";
 import ChatInput from "./components/ChatInput";
-import DocumentIntelligence from "../dashboard/components/DocumentIntelligence";
+import ChatDocumentIntelligence from "./components/ChatDocumentIntelligence";
 import { useMedicalStore } from "../../../stores/medical-store";
 import { medicalApi } from "../../../lib/api";
 import type { MedicalRecord } from "../../../types/medical";
@@ -28,6 +28,7 @@ const ChatView: React.FC = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [selectedBriefingDoc, setSelectedBriefingDoc] =
     useState<MedicalRecord | null>(null);
+  const [localFileUrl, setLocalFileUrl] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const historyEndRef = useRef<HTMLDivElement>(null);
 
@@ -47,6 +48,7 @@ const ChatView: React.FC = () => {
         setSessionDocs((prev) => [...prev, newest]);
         setSelectedBriefingDoc(newest); // Auto-show briefing for newly scanned doc
         setPendingFile(null);
+        // We keep localFileUrl for consistency or clear it if the doc has a remote img
       }
     }
   }, [activeScan, history, pendingFile, sessionDocs]);
@@ -126,6 +128,7 @@ const ChatView: React.FC = () => {
     const file = e.target.files?.[0];
     if (!file) return;
     setPendingFile(file);
+    setLocalFileUrl(URL.createObjectURL(file));
     const id = await startInterpretation(file);
     pollScanStatus(id);
   };
@@ -230,19 +233,22 @@ const ChatView: React.FC = () => {
 
       {/* Main Chat Area component*/}
       <div className="chat-main">
-        {selectedBriefingDoc && (
+        {(selectedBriefingDoc || activeScan) && (
           <div className="briefing-overlay">
             <div className="briefing-content">
               <button
                 className="close-briefing"
-                onClick={() => setSelectedBriefingDoc(null)}
+                onClick={() => {
+                  setSelectedBriefingDoc(null);
+                  setLocalFileUrl(null);
+                }}
               >
                 <span className="material-symbols-outlined">close</span>
-                Close Visual Briefing
               </button>
-              <DocumentIntelligence
+              <ChatDocumentIntelligence
                 document={selectedBriefingDoc}
-                titleOverride={`Intelligence: ${selectedBriefingDoc.type.replace("_", " ")}`}
+                localFileUrl={localFileUrl}
+                titleOverride={selectedBriefingDoc ? `Intelligence: ${selectedBriefingDoc.type.replace("_", " ")}` : "Analyzing Document..."}
               />
             </div>
           </div>
