@@ -130,7 +130,7 @@ const ChatInput: React.FC<ChatInputProps> = ({
             onUploadNew={onUploadNew}
             onAttachExisting={onAttachExisting}
           >
-            <button className="attach-btn">
+            <button className="attach-btn-new">
               <span className="material-symbols-outlined">attach_file</span>
             </button>
           </FileUploadOptions>
@@ -139,18 +139,19 @@ const ChatInput: React.FC<ChatInputProps> = ({
           ref={textareaRef}
           rows={1}
           className="chat-field"
-          placeholder="Ask about your reports, lifestyle adjustments… (Enter to send)"
+          placeholder="Ask Stride AI about your health..."
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onInput={handleInput}
           onKeyDown={handleKeyDown}
         />
         <div className="input-side-btn">
-          <button className="send-btn" onClick={submit}>
+          <button className="send-btn-new" onClick={submit}>
             <span className="material-symbols-outlined">send</span>
           </button>
         </div>
       </div>
+
     </div>
   );
 
