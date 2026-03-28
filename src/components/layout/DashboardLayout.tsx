@@ -17,7 +17,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
     <div className="layout-container">
       <Sidebar />
       <div className="main-wrapper">
-        <Header />
+        {location.pathname !== "/chat" && <Header />}
         <main className="content-area">{children}</main>
         {isDashboard && (
           <footer className="footer h-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-10 flex items-center justify-between shrink-0">
