@@ -31,19 +31,26 @@
   padding-bottom: 0.35rem;
 }
 
-.attach-btn {
+.attach-btn-new {
   color: var(--text-muted);
-  transition: color 0.2s ease, background 0.2s ease;
+  transition: all 0.2s ease;
   background-color: transparent;
   border-radius: var(--radius-md);
-  padding: 0.4rem;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
+  border: none;
+  cursor: pointer;
 }
 
-.attach-btn:hover {
+.attach-btn-new:hover {
   color: var(--primary);
-  background-color: var(--primary-light);
+  background-color: rgba(var(--primary-rgb), 0.05);
+}
+
+.attach-btn-new span {
+    font-size: 24px;
+    transform: rotate(45deg);
 }
 
 /* Textarea (replaces input) */
@@ -76,20 +83,85 @@
   color: var(--text-muted);
 }
 
-.send-btn {
-  padding: 0.5rem;
+.send-btn-new {
+  width: 54px;
+  height: 44px;
   background-color: var(--primary);
   color: white;
-  border-radius: var(--radius-md);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px var(--primary-border);
-  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.25);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   flex-shrink: 0;
+  border: none;
+  cursor: pointer;
 }
 
-.send-btn:hover {
-  transform: translateY(-1px);
-  background-color: #1a701a;
+.send-btn-new:hover {
+  transform: translateY(-2px) scale(1.02);
+  background-color: #2da15f;
+  box-shadow: 0 6px 16px rgba(var(--primary-rgb), 0.35);
+}
+
+.send-btn-new span {
+    font-size: 22px;
+    transform: translateX(2px);
+}
+
+/* Footer Section */
+.chat-input-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    padding-bottom: 0.25rem;
+}
+
+.footer-left p {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.footer-right span {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .chat-input-area {
+    padding: 0.5rem 1rem 1rem;
+  }
+
+  .input-wrapper {
+    padding: 0.4rem 0.4rem 0.4rem 0.6rem;
+  }
+
+  .chat-field {
+    font-size: 0.8125rem;
+    min-height: 40px;
+  }
+
+  .send-btn-new {
+    width: 48px;
+    height: 40px;
+  }
+
+  .chat-input-footer {
+    padding-top: 0.5rem;
+  }
+
+  .footer-right {
+    display: none; /* Hide character count/shortcuts on mobile */
+  }
 }
