@@ -25,8 +25,8 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ type, content, timestamp }) =
     <div className={`message-container ${type}-msg`}>
       <div className="message-avatar">
         {type === 'ai' ? (
-          <div className="ai-icon">
-            <span className="material-symbols-outlined">smart_toy</span>
+          <div className="ai-icon-new">
+            <span className="material-symbols-outlined">clinical_notes</span>
           </div>
         ) : (
           <img 
@@ -37,7 +37,26 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ type, content, timestamp }) =
       </div>
       <div className="message-content-wrapper">
         <div className="message-bubble">
-          <p className="message-text">{renderContent(content)}</p>
+          {content.includes('Analyzing your') && content.includes('%') ? (
+            <div className="analysis-progress-content">
+               <div className="analysis-header">
+                  <p className="analysis-title">{renderContent(content.split('...')[0] + '...')}</p>
+                  <span className="analysis-percentage">
+                    {content.match(/(\d+)%/) ? content.match(/(\d+)%/)![0] : ''}
+                  </span>
+               </div>
+               <div className="analysis-progress-container">
+                  <div className="analysis-progress-bar">
+                     <div className="analysis-progress-fill" style={{ width: content.match(/(\d+)%/) ? content.match(/(\d+)%/)![0] : '0%' }}></div>
+                  </div>
+               </div>
+               {content.includes('\n') && (
+                 <p className="analysis-subtext">{content.split('\n')[1]}</p>
+               )}
+            </div>
+          ) : (
+            <p className="message-text">{renderContent(content)}</p>
+          )}
         </div>
         <span className="message-time">{timestamp}</span>
       </div>
