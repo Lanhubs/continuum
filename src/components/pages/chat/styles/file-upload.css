@@ -69,3 +69,78 @@
   margin-left: auto;  
   font-weight: 600;
 }
+
+.upload-options-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.upload-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 1000;
+}
+
+.upload-menu-content {
+    position: absolute;
+    bottom: calc(100% + 16px);
+    left: -12px;
+    width: 720px;
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 12px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    z-index: 2000;
+    animation: slideUpFade 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .upload-menu-content {
+    background: var(--bg-dark-card);
+    box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+}
+
+.upload-container-reset {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(10px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Reusing High-Fidelity Classes inside Menu */
+.upload-menu-content .upload-zone-wrapper {
+    min-height: 320px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.upload-menu-content .quick-attach-sidebar {
+    width: 220px;
+    padding: 1.25rem;
+}
+
+.upload-menu-content .drop-zone-main {
+    padding: 2rem;
+}
+
+.upload-menu-content .cloud-icon-circle {
+    width: 48px;
+    height: 48px;
+}
+
+.upload-menu-content .cloud-icon-circle span {
+    font-size: 24px;
+}
+
+.upload-menu-content .upload-zone-title {
+    font-size: 1rem;
+}
