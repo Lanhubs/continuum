@@ -51,6 +51,12 @@
   }
   
   .content-area {
-    overflow-y: initial;
+    overflow-y: hidden;
   }
+}
+
+
+
+.general-padding{
+  padding: 1.5rem 2.5rem;
 }
