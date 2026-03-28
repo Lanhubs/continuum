@@ -7,7 +7,7 @@ interface MedicalState {
   prescriptions: MedicalRecord[];
   isLoading: boolean;
   error: string | null;
-  activeScan: { id: string; status: ScanStatus } | null;
+  activeScan: { id: string; status: ScanStatus; fileName: string } | null;
   trends: Record<string, TrendPoint[]>;
 
   // Actions
@@ -52,7 +52,7 @@ export const useMedicalStore = create<MedicalState>((set, get) => ({
     try {
       const { scan_id } = await medicalApi.interpret(file, type);
       set({ 
-        activeScan: { id: scan_id, status: { progress: 10, status: 'Starting' } },
+        activeScan: { id: scan_id, status: { progress: 10, status: 'Starting' }, fileName: file.name },
         isLoading: false 
       });
       return scan_id;
@@ -65,7 +65,10 @@ export const useMedicalStore = create<MedicalState>((set, get) => ({
   pollScanStatus: async (scanId) => {
     try {
       const status = await medicalApi.getScanStatus(scanId);
-      set({ activeScan: { id: scanId, status } });
+      const current = get().activeScan;
+      if (current && current.id === scanId) {
+        set({ activeScan: { ...current, status } });
+      }
       
       if (status.status === 'Ready' || status.status === 'Error') {
         if (status.status === 'Ready') await get().fetchHistory();
