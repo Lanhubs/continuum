@@ -131,6 +131,9 @@
   .header:has(.page-title) .mobile-brand .brand-name {
     display: none;
   }
+  .page-title{
+    font-size: 1.5rem;
+  }
 
   .desktop-only {
     display: none !important;
