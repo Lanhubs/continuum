@@ -23,12 +23,12 @@ function App() {
     <BrowserRouter>
       <DashboardLayout>
         <Routes>
-          <Route path="/" element={<DashboardPage />} />
+          <Route path="/" element={<GeneralPadding><DashboardPage /></GeneralPadding>} />
           <Route path="/chat" element={<ChatView />} />
-          <Route path="/prescriptions" element={<PrescriptionsPage />} />
-          <Route path="/lab-tests" element={<LabTestsPage />} />
-          <Route path="/lab-tests/:id" element={<LabTestDetailPage />} />
-          <Route path="/radiology" element={<RadiologyHistoryPage />} />
+          <Route path="/prescriptions" element={<GeneralPadding><PrescriptionsPage /></GeneralPadding>} />
+          <Route path="/lab-tests" element={<GeneralPadding><LabTestsPage /></GeneralPadding>} />
+          <Route path="/lab-tests/:id" element={<GeneralPadding><LabTestDetailPage /></GeneralPadding>} />
+          <Route path="/radiology" element={<GeneralPadding><RadiologyHistoryPage /></GeneralPadding>} />
           <Route path="/radiology/:id" element={<RadiologyPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
@@ -38,3 +38,12 @@ function App() {
 }
 
 export default App;
+
+
+const GeneralPadding = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="general-padding">
+      {children}
+    </div>
+  );
+};
