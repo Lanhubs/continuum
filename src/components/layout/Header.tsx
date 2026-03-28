@@ -9,7 +9,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="header glass">
-      <Branding className="mobile-brand" />
+      {/* <Branding className="mobile-brand" /> */}
       
       <div className="header-content">
         {location.pathname === "/lab-tests" ? (
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
         ) : location.pathname === "/prescriptions" ? (
           <div className="header-top">
             <div className="header-text">
-              <h3 className="page-title">Prescriptions</h3>
+              <h3 className="page-title" style={{fontSize: "1.5rem"}}>Prescriptions</h3>
               <p className="page-subtitle">Manage treatment plans</p>
             </div>
             <div className="header-actions">
